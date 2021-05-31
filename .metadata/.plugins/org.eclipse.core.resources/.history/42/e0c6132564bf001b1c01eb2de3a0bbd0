@@ -1,0 +1,5 @@
+package com.ms.producer.controllers;
+
+public class PublishController {
+
+}

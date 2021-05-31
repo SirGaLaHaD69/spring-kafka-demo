@@ -1,0 +1,5 @@
+package com.ms.producer.entities;
+
+public class Student {
+
+}

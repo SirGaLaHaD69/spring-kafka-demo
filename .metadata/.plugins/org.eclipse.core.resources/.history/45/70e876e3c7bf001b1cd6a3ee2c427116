@@ -1,0 +1,5 @@
+package com.ms.consumer.configs;
+
+public class ConsumerConfig {
+
+}

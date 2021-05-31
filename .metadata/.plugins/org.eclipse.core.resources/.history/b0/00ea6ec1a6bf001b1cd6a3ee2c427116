@@ -1,0 +1,27 @@
+package com.ms.producer.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ms.producer.entities.Student;
+
+@RestController
+public class PublishController {
+
+	@Autowired
+	private KafkaTemplate<String, Student> kafkaTemplate;
+	private static final String TOPIC ="myTopic";
+	
+	@PostMapping("/publish")
+	ResponseEntity<Student> publishMessage(@RequestBody Student student) {
+		
+		kafkaTemplate.send(TOPIC, student);
+		return new ResponseEntity<Student>(student, HttpStatus.OK);
+		
+	}
+}

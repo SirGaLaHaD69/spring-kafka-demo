@@ -1,0 +1,5 @@
+package com.ms.producer.services;
+
+public class ProducerService {
+
+}

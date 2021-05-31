@@ -1,0 +1,23 @@
+package com.ms.producer.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PublishController {
+
+	@Autowired
+	private KafkaTemplate<String, String> kafkaTemplate;
+	private static final String TOPIC ="myTopic";
+	
+	@GetMapping("/publish/{message}")
+	String publishMessage(@PathVariable("message") final String msg) {
+		
+		kafkaTemplate.send(TOPIC, msg);
+		return msg+"Published Successfully";
+		
+	}
+}

@@ -1,0 +1,18 @@
+package com.ms.consumer.configs;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.ConsumerFactory;
+
+@Configuration
+public class ConsumerConfiguration {
+
+	public ConsumerFactory<String, String> consumerFactory(){
+		Map<String,Object> config = new HashMap<>();
+		
+		config.put(Consumer, config)
+		
+	}
+}

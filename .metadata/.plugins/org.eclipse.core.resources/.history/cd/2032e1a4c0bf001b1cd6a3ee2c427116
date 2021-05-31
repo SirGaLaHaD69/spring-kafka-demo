@@ -1,0 +1,5 @@
+package com.ms.consumer.controllers;
+
+public class ConsumerController {
+
+}
